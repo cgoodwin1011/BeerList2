@@ -1,0 +1,28 @@
+<header>
+  <h1>My Beer list</h1>
+  <img src="../public/assets/img/willybecher.jpg" alt="beer mug">
+</header>
+
+<div id="beers-untried">To Do List</div>
+<ul>
+  {{#each todoBeer}}
+    <li>{{this.id}}. {{this.beer_name}}</li>
+    <button>Tried It!</button>
+  {{/each}}
+</ul>
+
+
+<div id="beers-tried">Been There, Drank That</div>
+<ul>
+  {{#each doneBeer}}
+    <li>{{this.id}}. {{this.beer_name}}</li>
+  {{/each}}
+</ul>
+
+<div id="add-new-beer">
+  <form method='POST' action='api/newBeer'>
+    Name: <input id="new-Beer-Name" name="newBeerName" type="text">
+    <button type="submit">Add New Beer</button>
+  </form>
+</div>
+
